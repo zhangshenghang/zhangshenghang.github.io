@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>石头</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="描述">
+<meta property="og:type" content="website">
+<meta property="og:title" content="石头">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="石头">
+<meta property="og:description" content="描述">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="石头">
+<meta name="twitter:description" content="描述">
+  
+    <link rel="alternate" href="/atom.xml" title="石头" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">石头</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-测试啊" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/08/测试啊/" class="article-date">
+  <time datetime="2017-07-08T06:16:04.000Z" itemprop="datePublished">2017-07-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/测试啊/">测试啊</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h3 id="1-python字符串split-函数"><a href="#1-python字符串split-函数" class="headerlink" title="1. python字符串split()函数"></a>1. python字符串split()函数</h3><p>split()当不带参数时以空格进行分割，当代参数时，以该参数进行分割。</p>
+<h3 id="2-字符串rstrip-和strip-函数"><a href="#2-字符串rstrip-和strip-函数" class="headerlink" title="2. 字符串rstrip()和strip()函数"></a>2. 字符串rstrip()和strip()函数</h3><p>rstrip()返回删除 string 字符串末尾的指定字符后生成的新字符串。默认删除空格</p>
+<p>strip()函数删除前后两端</p>
+<h3 id="3-python通过传递参数指定方法-参数"><a href="#3-python通过传递参数指定方法-参数" class="headerlink" title="3.python通过传递参数指定方法/参数"></a>3.python通过传递参数指定方法/参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"></div><div class="line">import sys</div><div class="line"></div><div class="line">#遍历f文件中数据，并加入到set中</div><div class="line">def read_local_file_func(f):</div><div class="line">    #创建一个set</div><div class="line">	word_set = set()</div><div class="line">	#读取 f 文件的内容到 file_in变量中</div><div class="line">    file_in = open(f, &apos;r&apos;)</div><div class="line">	#遍历 file_in 变量</div><div class="line">    for line in file_in:</div><div class="line">		#删除前后两端空格</div><div class="line">        word = line.strip()</div><div class="line">		#加入到set中</div><div class="line">        word_set.add(word)</div><div class="line">	#返回set</div><div class="line">    return word_set</div><div class="line"></div><div class="line"></div><div class="line">def mapper_func(white_list_fd):</div><div class="line">    word_set = read_local_file_func(white_list_fd)</div><div class="line">    for line in sys.stdin:</div><div class="line">        ss = line.strip().split(&apos; &apos;)</div><div class="line">        for s in ss:</div><div class="line">            word = s.strip()</div><div class="line">            if word != &quot;&quot; and (word in word_set):</div><div class="line">                print &quot;%s\t%s&quot; % (s, 1)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">	#sys.argv[1] 第一个传入的参数</div><div class="line">	#根据传入的第一个参数，获取对应的函数方法赋值给对象</div><div class="line">    module = sys.modules[__name__]</div><div class="line">    func = getattr(module, sys.argv[1])</div><div class="line">    args = None</div><div class="line">    if len(sys.argv) &gt; 1:</div><div class="line">        args = sys.argv[2:]</div><div class="line">	#调用方法sys.argv[1]，参数sys.argv[2:]从传入的第二个参数开始截取</div><div class="line">    func(*args)</div></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="4-vim-粘贴数据（详细讲解）"><a href="#4-vim-粘贴数据（详细讲解）" class="headerlink" title="4.vim 粘贴数据（详细讲解）"></a>4.vim 粘贴数据<a href="http://www.cnblogs.com/jianyungsun/archive/2012/07/31/2616671.html" target="_blank" rel="external">（详细讲解）</a></h3><blockquote>
+<p><strong>有时候，复制文本（尤其是代码）到 Vim，会出现格式错乱的问题。看样子，应该是自动缩进惹得祸。</strong></p>
+<p>paste 模式<br>运行如下命令，进入 paste 模式：</p>
+<p>:set paste<br>进入 paste 模式后，按 i 键进入插入模式，然后再粘帖，文本格式不会错乱了。</p>
+<p>但粘帖后还需要按 <esc><br>进入普通模式并执行如下命令结束 paste 模式：<br><strong>:set nopaste</strong><br>显然，这样非常麻烦。下面我们进行改进。<a href="http://www.cnblogs.com/jianyungsun/archive/2012/07/31/2616671.html" target="_blank" rel="external">（详细讲解）</a></esc></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/08/测试啊/" data-id="cj4uwcip10000pnggfdz1mvc2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python2/">python2</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/08/hello-world/" class="article-date">
+  <time datetime="2017-07-08T05:58:16.413Z" itemprop="datePublished">2017-07-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/08/hello-world/" data-id="cj4uvpmqm00000bggpih92nfv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python2/">python2</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python2/" style="font-size: 10px;">python2</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/08/测试啊/">测试啊</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/08/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 SheugHaug<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
