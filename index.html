@@ -67,7 +67,7 @@
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/08/hello-world/" class="article-date">
-  <time datetime="2017-07-08T07:17:00.210Z" itemprop="datePublished">2017-07-08</time>
+  <time datetime="2017-07-08T07:51:14.788Z" itemprop="datePublished">2017-07-08</time>
 </a>
     
   </div>
@@ -99,9 +99,91 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/08/hello-world/" data-id="cj4uyivn70000z0ggiekwyykw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/08/hello-world/" data-id="cj4uzqwyt0000lbggvbv19vdt" class="article-share-link">Share</a>
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo-github搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/08/hexo-github搭建/" class="article-date">
+  <time datetime="2017-07-08T07:50:32.000Z" itemprop="datePublished">2017-07-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/hexo-github搭建/">hexo+github搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>环境：Centos6.5  </p>
+<h5 id="1-git基础安装"><a href="#1-git基础安装" class="headerlink" title="1.git基础安装"></a>1.git基础安装</h5><pre><code>yum -y install git gcc gcc-c++ curl wget
+</code></pre><h5 id="2-安装nodejs"><a href="#2-安装nodejs" class="headerlink" title="2.安装nodejs"></a>2.安装nodejs</h5><pre><code>sudo yum install epel-release现在可以使用yum命令安装Node.js了。
+sudo yum install nodejs因为在开发过程中我需要管理节点包，我还要安装新公共管理的软件包管理器，使用以下命令。
+sudo yum install npm
+</code></pre><h5 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h5><pre><code>npm install -g hexo-cli
+</code></pre><p>注：默认下载比较卡，设置npm源，默认的比较卡<br>执行 npm config set registry “<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a>“ 将npm包源指向淘宝，就不需要翻墙安包了</p>
+<h5 id="4-建站"><a href="#4-建站" class="headerlink" title="4.建站"></a>4.建站</h5><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<pre><code>$ hexo init &lt;folder&gt;
+$ cd &lt;folder&gt;
+$ npm install
+</code></pre><h5 id="5-启动"><a href="#5-启动" class="headerlink" title="5.启动"></a>5.启动</h5><p>在folder目录下运行<strong>hexo server</strong><br><img src="http://i.imgur.com/H51d6SJ.png" alt=""><br>默认使用4000端口，可以使用hexo server -p 5000 更改端口</p>
+<p>至此可以内网使用了，使用hexo n “MyBlog”创建新文章</p>
+<h5 id="6-搭建github博客"><a href="#6-搭建github博客" class="headerlink" title="6.搭建github博客"></a>6.搭建github博客</h5><p>新建一个名为你的用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="external">http://test.github.io</a> 了</p>
+<p>创建完成后选择右侧的Setting页面<br><img src="http://chuantu.biz/t5/129/1499498937x3071277871.png" alt=""><br>选择Choose a theme 选择一个主题进入，此时应该可以进入刚刚设置的<a href="http://test.github.io，会显示你选择的主题，" target="_blank" rel="external">http://test.github.io，会显示你选择的主题，</a></p>
+<h5 id="7-hexo绑定github"><a href="#7-hexo绑定github" class="headerlink" title="7.hexo绑定github"></a>7.hexo绑定github</h5><ul>
+<li><p>配置Git个人信息<br>如果你之前已经配置好git个人信息，请跳过这一个 步骤，直接来到</p>
+<p>  1、设置Git的user name和email：(如果是第一次的话)  </p>
+<pre><code>git config --global user.name &quot;gitname&quot;
+git config --global user.email &quot;xxxx@qq.com&quot;
+</code></pre><p>  2、生成密钥  </p>
+<pre><code>ssh-keygen -t rsa -C &quot;xxxx@qq.com&quot;
+</code></pre></li>
+<li><p>配置hexo</p>
+<pre><code>deploy:
+type: git
+repo: git@github.com:yourname/yourname.github.io.git
+branch: master
+</code></pre></li>
+<li><p>配置git SSH keys</p>
+<p>  <img src="http://chuantu.biz/t5/129/1499499674x2728329017.png" alt=""><br>选择SSH and GPG keys =&gt; new SSH key<br>其中title随便起，key填入刚刚生成的秘钥内容，文件为 ~/.ssh/id_rsa.pub</p>
+</li>
+</ul>
+<h4 id="8-发表文章"><a href="#8-发表文章" class="headerlink" title="8.发表文章"></a>8.发表文章</h4><ul>
+<li>hexo n “myBlog”</li>
+<li>hexo d -g //在部署前先生成<br>执行以上两步即可在自己的域名下看到生成的文章了</li>
+</ul>
+<p><strong>踩坑提醒</strong>  </p>
+<pre><code>注意需要提前安装一个扩展：  
+npm install hexo-deployer-git --save  
+如果没有执行者行命令，将会提醒  
+deloyer not found:git 
+</code></pre><hr>
+<p>参考：<br><a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/deployment.html</a><br><a href="http://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="external">http://blog.csdn.net/gdutxiaoxu/article/details/53576018</a><br><a href="http://blog.csdn.net/gdutxiaoxu/article/details/53573399" target="_blank" rel="external">http://blog.csdn.net/gdutxiaoxu/article/details/53573399</a><br><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a><br><a href="http://www.cnblogs.com/itxdm/p/hexo.html" target="_blank" rel="external">http://www.cnblogs.com/itxdm/p/hexo.html</a><br><a href="https://segmentfault.com/a/1190000002632530" target="_blank" rel="external">https://segmentfault.com/a/1190000002632530</a>  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/08/hexo-github搭建/" data-id="cj4uzqwyz0001lbggrd8zogen" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo搭建/">hexo搭建</a></li></ul>
+
     </footer>
   </div>
   
@@ -135,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/08/流程/" data-id="cj4uyivnk0006z0gghaj2yn5o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/08/流程/" data-id="cj4uzqwz40004lbgg9oqr2765" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/08/测试啊/" data-id="cj4uyivnd0001z0gg0rnrxdkv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/08/测试啊/" data-id="cj4uzqwz40005lbggzx62p4u1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python2/">python2</a></li></ul>
@@ -207,7 +289,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python2/">python2</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo搭建/">hexo搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python2/">python2</a></li></ul>
     </div>
   </div>
 
@@ -217,7 +299,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python2/" style="font-size: 10px;">python2</a>
+      <a href="/tags/hexo搭建/" style="font-size: 10px;">hexo搭建</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python2/" style="font-size: 10px;">python2</a>
     </div>
   </div>
 
@@ -240,6 +322,10 @@
         
           <li>
             <a href="/2017/07/08/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/08/hexo-github搭建/">hexo+github搭建</a>
           </li>
         
           <li>
